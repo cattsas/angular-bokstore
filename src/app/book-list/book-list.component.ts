@@ -11,25 +11,42 @@ export class BookListComponent implements OnInit {
         "nombre":"El Psicoanalista",
         "autor" :"John Katzenbach",
         "genero":"Thriller",
-        "editorial":"Kapelusz",
         "precio":1500,
         "imagen":"assets/images/psicoanalista.jpg",
-        "cantidad":50,
-        "best_seller":true
+        "stock":50,
+        "best_seller":true,
+        "cantidad":0
       },
     {
       "nombre":"Cujo",
       "autor" :"Stephen King",
       "genero":"Terror",
-      "editorial":"LB",
       "precio":1100,
       "imagen":"assets/images/cujo.jpg",
-      "cantidad":0,
-      "best_seller":false
+      "stock":0,
+      "best_seller":false,
+      "cantidad":0
   }]
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  sumStock(book: Book): void {
+    if (book.cantidad<book.stock){
+     book.cantidad++;
+    }
+  }
+
+  decStock(book: Book): void {
+    if (book.cantidad>0){
+     book.cantidad--;
+    }
+  }
+
+  modCantidad (event,book: Book): void{
+    if (event.key<='0' || event.key>='9') {
+      console.log ("hola");
+    };
+  }
 }

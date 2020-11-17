@@ -5,9 +5,9 @@
             <th scope="col">Nombre</th>
             <th scope="col">Autor</th>
             <th scope="col">Genero</th>
-            <th scope="col">Editorial</th>
             <th scope="col">Precio</th>
-            <th scope="col">Cantidad</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Comprar </th>
             <th scope="col">Carrito</th>
         </tr>
     </thead>
@@ -18,11 +18,14 @@
             <td class="align-middle">{{book.nombre}}</td>
             <td class="align-middle">{{book.autor}}</td>
             <td class="align-middle">{{book.genero}}</td>
-            <td class="align-middle">{{book.editorial}}</td>
             <td class="align-middle">{{book.precio | currency}}</td>
-            <td class="align-middle"><span class="text-danger font-weight-bolder" *ngIf="book.cantidad==0; else disponibles">AGOTADO</span></td>
-            <ng-template #disponibles><span class="d-flex justify-content-center">{{book.cantidad}}</span></ng-template>
-            <td class="align-middle"><button type="button" class="btn btn-dark">Agregar</button></td>
+            <td class="align-middle"><span class="text-danger font-weight-bolder" *ngIf="book.stock==0; else disponibles">AGOTADO</span></td>
+            <ng-template #disponibles><span class="d-flex justify-content-center">{{book.stock}}</span></ng-template>
+            <td class="align-middle">
+                <button type="button" class="btn btn-outline-primary btn-sm" (click)="sumStock(book)">+</button><input type="text" (keyup)="modCantidad ($event,book)" [(ngModel)]="book.cantidad" maxlength="2"><button type="button " class="btn btn-outline-primary
+                    btn-sm " (click)="decStock(book) ">-</button>
+            </td>
+            <td class="align-middle "><button type="button " class="btn btn-dark ">Agregar</button></td>
         </tr>
 
     </tbody>

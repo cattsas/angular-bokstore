@@ -2,9 +2,9 @@ export interface Book {
     nombre:string;
     autor :string;
     genero:string;
-    editorial:string;
     precio:number;
     imagen:string;
-    cantidad:number;
+    stock:number;
     best_seller:boolean;
+    cantidad:number;
 }
