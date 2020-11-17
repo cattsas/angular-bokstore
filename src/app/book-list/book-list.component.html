@@ -14,15 +14,15 @@
     <tbody>
         <tr *ngFor="let book of books" [ngClass]="{'bg-warning': book.best_seller}">
 
-            <td><img [src]="book.imagen" class="img-fluid"></td>
-            <td>{{book.nombre}}</td>
-            <td>{{book.autor}}</td>
-            <td>{{book.genero}}</td>
-            <td>{{book.editorial}}</td>
-            <td>{{book.precio | currency}}</td>
-            <td><span class="text-danger font-weight-bolder" *ngIf="book.cantidad==0">AGOTADO</span></td>
-            <td *ngElse>{{book.cantidad}}</td>
-            <td><button type="button" class="btn btn-dark">Agregar</button></td>
+            <td><img [src]="book.imagen" class="img-fluid portada"></td>
+            <td class="align-middle">{{book.nombre}}</td>
+            <td class="align-middle">{{book.autor}}</td>
+            <td class="align-middle">{{book.genero}}</td>
+            <td class="align-middle">{{book.editorial}}</td>
+            <td class="align-middle">{{book.precio | currency}}</td>
+            <td class="align-middle"><span class="text-danger font-weight-bolder" *ngIf="book.cantidad==0; else disponibles">AGOTADO</span></td>
+            <ng-template #disponibles><span class="d-flex justify-content-center">{{book.cantidad}}</span></ng-template>
+            <td class="align-middle"><button type="button" class="btn btn-dark">Agregar</button></td>
         </tr>
 
     </tbody>
