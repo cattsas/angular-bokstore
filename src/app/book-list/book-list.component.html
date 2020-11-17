@@ -1,0 +1,26 @@
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Portada</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Autor</th>
+            <th scope="col">Genero</th>
+            <th scope="col">Editorial</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+
+            <td><img [src]="book.imagen" class="img-fluid"></td>
+            <td>{{book.nombre}}</td>
+            <td>{{book.autor}}</td>
+            <td>{{book.genero}}</td>
+            <td>{{book.editorial}}</td>
+            <td>{{book.precio}}</td>
+            <td>{{book.cantidad}}</td>
+        </tr>
+
+    </tbody>
+</table>
