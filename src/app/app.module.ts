@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookChartComponent } from './book-chart/book-chart.component';
 import { FormsModule } from '@angular/forms';
+import { BookstoreAboutComponent } from './bookstore-about/bookstore-about.component';
+import { BookstoreBooksComponent } from './bookstore-books/bookstore-books.component';
+import { BookstoreChartComponent } from './bookstore-chart/bookstore-chart.component';
 
 
 @NgModule({
@@ -13,6 +16,9 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     BookListComponent,
     BookChartComponent,
+    BookstoreAboutComponent,
+    BookstoreBooksComponent,
+    BookstoreChartComponent,
   ],
   imports: [
     BrowserModule,
