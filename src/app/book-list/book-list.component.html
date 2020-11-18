@@ -22,7 +22,7 @@
             <td class="align-middle"><span class="text-danger font-weight-bolder" *ngIf="book.stock==0; else disponibles">AGOTADO</span></td>
             <ng-template #disponibles><span class="d-flex justify-content-center">{{book.stock}}</span></ng-template>
             <td class="align-middle">
-                <div class="input-group mb-3">
+                <div class="input-group mb-0">
                     <div class="input-group-prepend" id="button-addon3">
                         <button class="btn btn-outline-primary btn-sm" type="button" (click)="sumStock(book)">+</button>
                         <input type="text" class="form-control" (keyup)="modCantidad ($event,book)" [(ngModel)]="book.cantidad" maxlength="2" class="inputCant">
