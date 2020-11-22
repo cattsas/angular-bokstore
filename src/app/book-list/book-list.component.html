@@ -20,15 +20,10 @@
             <td class="align-middle">{{book.genero}}</td>
             <td class="align-middle">{{book.precio | currency}}</td>
             <td class="align-middle"><span class="text-danger font-weight-bolder" *ngIf="book.stock==0; else disponibles">AGOTADO</span></td>
-            <ng-template #disponibles><span class="d-flex justify-content-center">{{book.stock}}</span></ng-template>
+            <ng-template #disponibles><span class="d-flex justify-content-center">{{book.stock-book.cantidad}}</span></ng-template>
             <td class="align-middle">
-                <div class="input-group mb-0">
-                    <div class="input-group-prepend" id="button-addon3">
-                        <button class="btn btn-outline-primary btn-sm" type="button" (click)="sumStock(book)">+</button>
-                        <input type="text" class="form-control" (keyup)="modCantidad ($event,book)" [(ngModel)]="book.cantidad" maxlength="2" class="inputCant">
-                        <button class="btn btn-outline-primary btn-sm" type="button" (click)="decStock(book)">-</button>
-                    </div>
-                </div>
+                <app-input-cant [(cant)]="book.cantidad" [max]="book.stock" *ngIf="book.stock" (maxReached)="maxReached($event)"></app-input-cant>
+
             </td>
             <td class="align-middle "><button type="button " class="btn btn-dark ">Agregar</button></td>
         </tr>

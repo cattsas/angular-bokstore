@@ -32,21 +32,7 @@ export class BookListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  sumStock(book: Book): void {
-    if (book.cantidad<book.stock){
-     book.cantidad++;
-    }
-  }
-
-  decStock(book: Book): void {
-    if (book.cantidad>0){
-     book.cantidad--;
-    }
-  }
-
-  modCantidad (event,book: Book): void{
-    if (event.key<='0' || event.key>='9') {
-      console.log ("hola");
-    };
+  maxReached (msg: string){
+    alert(msg);
   }
 }

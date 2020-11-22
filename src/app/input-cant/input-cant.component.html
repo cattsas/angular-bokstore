@@ -1,0 +1,7 @@
+<div class="input-group mb-0">
+    <div class="input-group-prepend" id="button-addon3">
+        <button class="btn btn-outline-primary btn-sm" type="button" (click)="sumStock()">+</button>
+        <input type="text" class="form-control" (keyup)="modCantidad ($event,cant)" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" [(ngModel)]="cant" maxlength="2" class="inputCant">
+        <button class="btn btn-outline-primary btn-sm" type="button" (click)="decStock()">-</button>
+    </div>
+</div>
