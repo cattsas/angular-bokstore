@@ -40,12 +40,6 @@ export class InputCantComponent implements OnInit {
      this.cantChange.emit(this.cant);
     }
   }
-
-  modCantidad (event,book: Book): void{
-    if (event.key<='0' || event.key>='9') {
-      
-      console.log(event.key);
-      this.cantChange.emit(this.cant);
-    };
-  }
+ 
+   
 }

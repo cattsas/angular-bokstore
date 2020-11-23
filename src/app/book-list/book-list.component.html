@@ -7,8 +7,8 @@
             <th scope="col">Genero</th>
             <th scope="col">Precio</th>
             <th scope="col">Stock</th>
-            <th scope="col">Comprar </th>
-            <th scope="col">Carrito</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Comprar</th>
         </tr>
     </thead>
     <tbody>
@@ -25,7 +25,7 @@
                 <app-input-cant [(cant)]="book.cantidad" [max]="book.stock" *ngIf="book.stock" (maxReached)="maxReached($event)"></app-input-cant>
 
             </td>
-            <td class="align-middle "><button type="button " class="btn btn-dark ">Agregar</button></td>
+            <td *ngIf="book.stock>0" class="align-middle "><button type="button " class="btn btn-dark " (click)="addToCart(book)">Agregar</button></td>
         </tr>
 
     </tbody>

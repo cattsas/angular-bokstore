@@ -1,21 +1,10 @@
 <span class="text-white font-weight-bold bg-dark d-flex justify-content-center">Carrito</span>
 <ul class="list-group">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        Título
-        <span class="badge badge-warning badge-pill">Cementerio de animales</span>
+    <li *ngFor="let book of myList$ | async" class="list-group-item d-flex justify-content-between align-items-center">
+
+        <span class="badge badge-warning badge-pill">Título:{{book.nombre}}</span>
     </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        Cantidad
-        <span class="badge badge-warning badge-pill">2</span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        Precio unitario
-        <span class="badge badge-warning badge-pill">1</span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        Subtotal
-        <span class="badge badge-warning badge-pill">1</span>
-    </li>
+
 </ul>
 
 <div class="input-group">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BookCartService } from '../book-cart.service';
 import { Book } from './Book';
 @Component({
   selector: 'app-book-list',
@@ -13,7 +14,7 @@ export class BookListComponent implements OnInit {
         "genero":"Thriller",
         "precio":1500,
         "imagen":"assets/images/psicoanalista.jpg",
-        "stock":50,
+        "stock":5,
         "best_seller":true,
         "cantidad":0
       },
@@ -23,13 +24,22 @@ export class BookListComponent implements OnInit {
       "genero":"Terror",
       "precio":1100,
       "imagen":"assets/images/cujo.jpg",
-      "stock":0,
+      "stock":15,
       "best_seller":false,
       "cantidad":0
   }]
-  constructor() { }
+  
+
+  constructor(private cart: BookCartService) { 
+  this.cart= new BookCartService();}
 
   ngOnInit(): void {
+  }
+
+  addToCart(book): void{
+    this.cart.addToCart(book);
+    book.stock-=book.cantidad;
+    book.cantidad=0;
   }
 
   maxReached (msg: string){
