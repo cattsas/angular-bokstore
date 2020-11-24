@@ -5,25 +5,30 @@ import { Book } from './book-list/Book';
 @Injectable({
   providedIn: 'root'
 })
-export class BookCartService {
+/**
+ * maneja la logica del carrito
+ * 
+ */
 
-  private _myList: Book [] = [];
+export class BookCartService {
+ 
+private _myList: Book [] = [];
   
-  myList: BehaviorSubject<Book[]> = new BehaviorSubject([]);
+myList: BehaviorSubject<Book[]> = new BehaviorSubject([]);//hace observable a myList
   
-  constructor() { }
+constructor() { }
   
-  addToCart(book: Book) {
-    let item: Book = this._myList.find((value1) => value1.nombre == book.nombre);
+addToCart(book: Book) {
+    let item: Book = this._myList.find((value1) => value1.nombre == book.nombre);//busca si ya se cargo el elemento al carrito
     if (!item) {
-      this._myList.push({ ... book});
+      this._myList.push({ ... book});//clona el objeto
     }
     else {
       item.cantidad+=book.cantidad;      
     }
    
     console.table(this._myList);
-    this.myList.next(this._myList);//equivalente al emmit de eventos
+    this.myList.next(this._myList);//equivalente al emmitt de eventos
     
   }
 

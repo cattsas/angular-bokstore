@@ -27,11 +27,13 @@ export class BookListComponent implements OnInit {
       "stock":15,
       "best_seller":false,
       "cantidad":0
-  }]
+  }];
+ 
   
 
   constructor(private cart: BookCartService) { 
-  this.cart= new BookCartService();}
+  
+  }
 
   ngOnInit(): void {
   }
@@ -40,6 +42,7 @@ export class BookListComponent implements OnInit {
     this.cart.addToCart(book);
     book.stock-=book.cantidad;
     book.cantidad=0;
+    
   }
 
   maxReached (msg: string){
