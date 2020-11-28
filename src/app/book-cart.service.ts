@@ -19,6 +19,7 @@ myList: BehaviorSubject<Book[]> = new BehaviorSubject([]);//hace observable a my
 constructor() { }
   
 addToCart(book: Book) {
+    let total:number=0;
     let item: Book = this._myList.find((value1) => value1.nombre == book.nombre);//busca si ya se cargo el elemento al carrito
     if (!item) {
       this._myList.push({ ... book});//clona el objeto
@@ -26,8 +27,11 @@ addToCart(book: Book) {
     else {
       item.cantidad+=book.cantidad;      
     }
-   
-    console.table(this._myList);
+    
+    this._myList.forEach(element => {
+      total+=element.precio*element.cantidad
+    });
+    console.log(total);
     this.myList.next(this._myList);//equivalente al emmitt de eventos
     
   }
