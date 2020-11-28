@@ -14,7 +14,7 @@
     <tbody>
         <tr *ngFor="let book of books" [ngClass]="{'bg-warning': book.best_seller}">
 
-            <td class="blackInback"><img [src]="book.imagen" class="img-fluid portada"></td>
+            <td class="blackInback"><img [src]="book.imagen" class="img-fluid portada" alt="Powered by Stackblitz"></td>
             <td class="align-middle">{{book.nombre}}</td>
             <td class="align-middle">{{book.autor}}</td>
             <td class="align-middle">{{book.genero}}</td>
