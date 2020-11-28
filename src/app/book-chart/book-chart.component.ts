@@ -11,9 +11,13 @@ import { Book } from '../book-list/Book';
 export class BookChartComponent implements OnInit {
 
   myList$: Observable<Book[]>;
+  total$: Observable<number>;
   
-  constructor (private cart: BookCartService) {
+  constructor (private cart: BookCartService, private suma: BookCartService) {
     this.myList$ = cart.myList.asObservable();
+    this.total$ = suma.total.asObservable();
+    
+   
     
    }
 

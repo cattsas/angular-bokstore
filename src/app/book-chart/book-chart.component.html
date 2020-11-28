@@ -15,9 +15,9 @@
 
 </ul>
 
-<div class="input-group">
+<div class="input-group justify-content-between">
     <div class="input-group-prepend">
         <span class="input-group-text bg-dark text-white">Total</span>
     </div>
-    <input type="number" aria-label="First name" class="form-control" readonly>
+    <span class="mr-1 col-2 badge badge-warning badge-pill d-flex align-items-center justify-content-center">{{total$ | async}}</span>
 </div>
