@@ -8,7 +8,6 @@ import { BookChartComponent } from './book-chart/book-chart.component';
 import { FormsModule } from '@angular/forms';
 import { BookstoreAboutComponent } from './bookstore-about/bookstore-about.component';
 import { BookstoreBooksComponent } from './bookstore-books/bookstore-books.component';
-import { BookstoreChartComponent } from './bookstore-chart/bookstore-chart.component';
 import { InputCantComponent } from './input-cant/input-cant.component';
 
 
@@ -19,7 +18,6 @@ import { InputCantComponent } from './input-cant/input-cant.component';
     BookChartComponent,
     BookstoreAboutComponent,
     BookstoreBooksComponent,
-    BookstoreChartComponent,
     InputCantComponent,
   ],
   imports: [
