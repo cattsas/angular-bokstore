@@ -4,7 +4,6 @@
             <th scope="col">Portada</th>
             <th scope="col">Nombre</th>
             <th scope="col">Autor</th>
-            <th scope="col">Genero</th>
             <th scope="col">Precio</th>
             <th scope="col">Stock</th>
             <th scope="col">Cantidad</th>
@@ -17,9 +16,8 @@
             <td class="blackInback"><img [src]="book.imagen" class="img-fluid portada" alt="Powered by Stackblitz"></td>
             <td class="align-middle">{{book.nombre}}</td>
             <td class="align-middle">{{book.autor}}</td>
-            <td class="align-middle">{{book.genero}}</td>
             <td class="align-middle">{{book.precio | currency}}</td>
-            <td class="align-middle"><span class="text-danger font-weight-bolder" *ngIf="book.stock==0; else disponibles">AGOTADO</span></td>
+            <td class="align-middle"><span class="text-danger font-weight-bolder" *ngIf="book.stock<=0; else disponibles">AGOTADO</span></td>
             <ng-template #disponibles><span class="d-flex justify-content-center">{{book.stock-book.cantidad}}</span></ng-template>
             <td class="align-middle">
                 <app-input-cant [(cant)]="book.cantidad" [max]="book.stock" *ngIf="book.stock" (maxReached)="maxReached($event)"></app-input-cant>

@@ -11,7 +11,6 @@ export class BookListComponent implements OnInit {
       {
         "nombre":"El Psicoanalista",
         "autor" :"John Katzenbach",
-        "genero":"Thriller",
         "precio":1500,
         "imagen":"assets/images/psicoanalista.jpg",
         "stock":5,
@@ -21,7 +20,6 @@ export class BookListComponent implements OnInit {
       {
         "nombre":"La guerra invisible",
         "autor" :"Marcelo Larraquy",
-        "genero":"Investigación",
         "precio":1200,
         "imagen":"assets/images/guerra invisible.jpg",
         "stock":12,
@@ -31,7 +29,6 @@ export class BookListComponent implements OnInit {
       {
         "nombre":"Los guardianes",
         "autor" :"John Grisham",
-        "genero":"Suspenso",
         "precio":1300,
         "imagen":"assets/images/los guardianes.jpg",
         "stock":12,
@@ -41,7 +38,6 @@ export class BookListComponent implements OnInit {
       {
         "nombre":"Lo mucho que te amé",
         "autor" :"Eduardo Sacheri",
-        "genero":"Novela",
         "precio":1000,
         "imagen":"assets/images/sacheri.jpg",
         "stock":25,
@@ -51,7 +47,6 @@ export class BookListComponent implements OnInit {
       {
         "nombre":"Línea de fuego",
         "autor" :"Arturo Perez-Reverte",
-        "genero":"Novela histórica",
         "precio":1700,
         "imagen":"assets/images/reverte.jpg",
         "stock":17,
@@ -61,7 +56,6 @@ export class BookListComponent implements OnInit {
     {
       "nombre":"Cujo",
       "autor" :"Stephen King",
-      "genero":"Terror",
       "precio":1100,
       "imagen":"assets/images/cujo.jpg",
       "stock":15,

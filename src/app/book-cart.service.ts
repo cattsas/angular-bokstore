@@ -22,20 +22,26 @@ constructor() { }
   
 addToCart(book: Book) {
     this._total=0;
-    let item: Book = this._myList.find((value1) => value1.nombre == book.nombre);//busca si ya se cargo el elemento al carrito
-    if (!item) {
-      this._myList.push({ ... book});//clona el objeto
+    if (book.cantidad>book.stock){
+      alert("excede disponible");
+      book.cantidad=0;
     }
     else {
-      item.cantidad+=book.cantidad;      
+      let item: Book = this._myList.find((value1) => value1.nombre == book.nombre);//busca si ya se cargo el elemento al carrito
+      if (!item) {
+        this._myList.push({ ... book});//clona el objeto
+      }
+      else {
+        item.cantidad+=book.cantidad;      
+      }
+      
+      this._myList.forEach(element => {
+        this._total+=element.precio*element.cantidad
+      });
+      console.log(this._total);
+      this.myList.next(this._myList);//equivalente al emmitt de eventos
+      this.total.next(this._total);
     }
-    
-    this._myList.forEach(element => {
-      this._total+=element.precio*element.cantidad
-    });
-    console.log(this._total);
-    this.myList.next(this._myList);//equivalente al emmitt de eventos
-    this.total.next(this._total);
   }
 
 }
